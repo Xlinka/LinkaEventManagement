@@ -1,0 +1,43 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="LinkasEventManagement.MainWindow"
+        Title="Linka's Event Management"
+        Width="1200" Height="800"
+        Background="#2E2E2E">
+
+	<StackPanel>
+		<!-- Top Bar -->
+		<Border Background="#3C3F41" Padding="10" CornerRadius="0,0,10,10" BoxShadow="0 4 8 0 #00000080">
+			<TextBlock Text="Linka's Event Management"
+                       FontSize="24"
+                       Foreground="White"
+                       HorizontalAlignment="Center"/>
+		</Border>
+
+		<!-- Settings Panel -->
+		<Border Background="#3C3F41" Padding="10" CornerRadius="10" BoxShadow="0 4 8 0 #00000080" Margin="10,10,10,0">
+			<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="20">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Refresh Interval (seconds): " Foreground="White" VerticalAlignment="Center"/>
+					<TextBox Name="RefreshIntervalTextBox" Width="50" Margin="5,0"/>
+					<Button Content="Set" Click="OnSetRefreshInterval" Margin="5,0"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Session ID Partial Search: S-" Foreground="White" VerticalAlignment="Center"/>
+					<TextBox Name="SessionIdPartialTextBox" Width="200" Margin="5,0"/>
+					<Button Content="Search" Click="OnSearchSessionIdPartial" Margin="5,0"/>
+				</StackPanel>
+			</StackPanel>
+		</Border>
+
+		<!-- ScrollViewer for Sessions -->
+		<ScrollViewer VerticalScrollBarVisibility="Auto">
+			<WrapPanel Name="SessionsPanel" Margin="10">
+				<!-- Session cards will be dynamically added here -->
+			</WrapPanel>
+		</ScrollViewer>
+	</StackPanel>
+</Window>
